@@ -1,52 +1,44 @@
 export default function Sidebar() {
   return (
-    <aside className="md:w-[320px] w-full border-r border-gray-200 px-8 py-10 bg-gray-50">
-      <div className="sticky top-10">
-        <h1 className="text-4xl font-bold mb-6">Nguyễn Duy Bảo</h1>
+    <aside className="lg:w-96 w-full lg:border-r border-zinc-200 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl lg:sticky lg:top-0 lg:h-screen p-8 lg:p-12 overflow-y-auto">
+      <div className="space-y-8">
+        <div>
+          <h1 className="text-5xl font-bold tracking-tighter">Nguyễn Duy Bảo</h1>
+          <p className="text-indigo-600 dark:text-indigo-400 mt-2 text-xl font-medium">
+            Full-Stack Developer
+          </p>
+        </div>
 
         <img
           src="/avatar.jpg"
-          alt="Ảnh đại diện"
-          className="w-52 h-52 rounded-full object-cover mb-6 border-4 border-white shadow"
+          alt="Nguyễn Duy Bảo"
+          className="w-56 h-56 rounded-3xl object-cover shadow-2xl ring-1 ring-zinc-200 dark:ring-zinc-700"
         />
 
-        <p className="text-lg text-gray-700 font-medium mb-2">
-          Lập trình viên định fullstack với niềm đam mê về backend và hệ thống phân tán. Tôi tập trung vào việc xây dựng các API đáng tin cậy, hệ thống có khả năng mở rộng và kiến trúc phần mềm dễ bảo trì.
-        </p>
-        <p className="text-gray-600 mb-6 leading-7">
-          Golang, Spring Boot, Laravel <br />
-          Thiết kế API • Redis • PostgreSQL • Docker
-          Thiết kế giao diện frontend với React, Vue.js, HTML/CSS/JS. Tối ưu hiệu năng backend với caching, database indexing, và tối ưu truy vấn.
-        </p>
-
-        <div className="space-y-2 text-blue-700">
+        <div className="space-y-6 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           <p>
-            <a href="mailto:nguyenduybao312@gmail.com">
-              Email
-            </a>
+            Lập trình viên full-stack với niềm đam mê về backend và hệ thống phân tán. 
+            Tôi tập trung vào việc xây dựng API đáng tin cậy, scalable và kiến trúc dễ bảo trì.
           </p>
-          <p>
-            <a href="https://github.com/NDB512" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
+          <p className="text-sm font-medium">
+            Golang • Spring Boot • Laravel • React • Redis • PostgreSQL • Docker
           </p>
-          {/* <p>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-          </p> */}
-          {/* <p>
-            <a href="/cv.pdf" target="_blank" rel="noreferrer">
-              Tải CV
-            </a>
-          </p> */}
         </div>
 
-        <div className="mt-8 text-gray-600 leading-7">
-          <p>
-            Tôi xây dựng các hệ thống full-stack với trọng tâm là clean architecture,
-            xác thực người dùng, caching và tối ưu hiệu năng.
-          </p>
+        <div className="pt-6 border-t border-zinc-200 dark:border-zinc-700">
+          <div className="flex flex-col gap-4 text-lg font-medium">
+            <a href="mailto:nguyenduybao312@gmail.com" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+              Email
+            </a>
+            <a 
+              href="https://github.com/NDB512" 
+              target="_blank" 
+              rel="noreferrer"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
     </aside>
