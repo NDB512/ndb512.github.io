@@ -34,80 +34,80 @@ export default function App() {
           <section className="mb-16">
             <SectionTitle title="Giới thiệu" />
             <p className="text-xl leading-relaxed text-zinc-700 dark:text-zinc-300 max-w-3xl">
-              Tôi là một lập trình viên full-stack, đam mê xây dựng các API ổn định, hệ thống có khả năng mở rộng 
-              và kiến trúc phần mềm sạch sẽ, dễ bảo trì. Hiện tại tôi tập trung vào xác thực người dùng, caching, 
-              thiết kế cơ sở dữ liệu, tối ưu hiệu năng backend và thiết kế frontend hiện đại.
+              Tôi là lập trình viên full-stack, tập trung vào backend scalable, hệ thống phân tán
+              và ứng dụng AI. Gần đây tôi xây dựng các hệ thống RAG phục vụ truy vấn tài liệu
+              và phân tích dữ liệu thực tế.
             </p>
           </section>
 
           <section className="mb-16">
             <SectionTitle title="Công nghệ sử dụng" />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  { label: "Backend", value: "Golang, Spring Boot, Laravel" },
-                  { label: "Frontend", value: "React, Vue.js, Tailwind CSS" },
-                  { label: "Cơ sở dữ liệu & Cache", value: "PostgreSQL, MySQL, Redis" },
-                  { label: "DevOps", value: "Docker, Nginx, Linux" },
-                  { label: "Testing", value: "K6, Vitest, Postman" },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="glass p-7 rounded-3xl border border-zinc-200 dark:border-zinc-800 hover:scale-[1.02]"
-                  >
-                    <p className="font-semibold text-indigo-600 dark:text-indigo-400 mb-2 text-lg">
-                      {item.label}
-                    </p>
-                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                      {item.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                { label: "Backend", value: "Golang, Spring Boot, Python" },
+                { label: "Frontend", value: "React, Vue.js, Tailwind CSS" },
+                { label: "Database & Cache", value: "PostgreSQL, MySQL, Redis" },
+                { label: "AI/ML", value: "RAG, LangChain, FAISS, Transformers" },
+                { label: "DevOps", value: "Docker, Nginx, Linux" },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="glass p-7 rounded-3xl border border-zinc-200 dark:border-zinc-800 hover:scale-[1.02]"
+                >
+                  <p className="font-semibold text-indigo-600 dark:text-indigo-400 mb-2 text-lg">
+                    {item.label}
+                  </p>
+                  <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <section className="mb-16">
             <SectionTitle title="Dự án nổi bật" />
             <div className="space-y-12">
+
+              <ProjectCard
+                title="Legal RAG Mini"
+                subtitle="AI / NLP System"
+                description="Hệ thống RAG phân tích hợp đồng và văn bản pháp lý tiếng Việt, hỗ trợ truy vấn điều khoản, so sánh luật và trích xuất thông tin chính xác."
+                highlights={[
+                  "Chunking theo cấu trúc pháp lý (Điều, Chương, Mục)",
+                  "Semantic search với FAISS",
+                  "Phân loại intent truy vấn",
+                  "LLM integration (Groq - LLaMA 3)",
+                  "Hiển thị nguồn trích dẫn rõ ràng",
+                ]}
+                tech="Python • LangChain • FAISS • Transformers • Streamlit"
+                github="https://github.com/NDB512/RAG_Python"
+              />
+
               <ProjectCard
                 title="Hệ thống rút gọn URL"
                 subtitle="Backend Service"
-                description="Dịch vụ rút gọn link hiện đại với JWT authentication, quản lý URL theo người dùng, theo dõi lượt click và Redis caching."
+                description="Dịch vụ rút gọn link với JWT authentication, tracking và caching hiệu năng cao."
                 highlights={[
-                  "Xác thực JWT",
-                  "Quản lý URL cá nhân hóa",
-                  "Thống kê truy cập thời gian thực",
+                  "JWT Authentication",
                   "Redis caching",
-                  "RESTful API chuẩn",
+                  "Tracking analytics",
+                  "RESTful API",
                 ]}
-                tech="Golang • Gin • PostgreSQL • Redis • Docker"
+                tech="Golang • Gin • PostgreSQL • Redis"
                 github="https://github.com/NDB512/golang_server"
               />
 
               <ProjectCard
-                title="Hệ thống xử lý tài liệu OCR"
-                subtitle="OCR Pipeline"
-                description="Hệ thống trích xuất và xử lý văn bản từ hình ảnh, PDF thông qua quy trình OCR mạnh mẽ."
-                highlights={[
-                  "Tích hợp OCR engine",
-                  "Xử lý file upload lớn",
-                  "Backend processing pipeline",
-                  "API-driven architecture",
-                ]}
-                tech="Python • OCR • Backend APIs"
-                github="https://github.com/NDB512/ocr_system"
-              />
-
-              <ProjectCard
-                title="Hệ thống J2EE Authentication"
+                title="J2EE Authentication"
                 subtitle="Security Module"
-                description="Hệ thống xác thực theo module với đăng ký, đăng nhập, kiểm tra token và phân quyền truy cập."
+                description="Hệ thống xác thực và phân quyền theo module, thiết kế clean architecture."
                 highlights={[
-                  "JWT Authentication",
-                  "Middleware phân quyền",
-                  "Protected routes",
-                  "Clean modular design",
+                  "JWT",
+                  "Role-based access",
+                  "Middleware security",
                 ]}
-                tech="Spring Boot • Java • JPA • MySQL"
+                tech="Spring Boot • Java • MySQL"
                 github="https://github.com/NDB512/J2EE-project"
               />
             </div>
@@ -115,9 +115,9 @@ export default function App() {
 
           <section className="mb-16">
             <SectionTitle title="Học vấn" />
-            <p className="text-xl leading-relaxed text-zinc-700 dark:text-zinc-300">
-              Sinh viên ngành Công nghệ Thông tin, tập trung mạnh vào phát triển full-stack, 
-              quản trị cơ sở dữ liệu và kỹ thuật phần mềm thực tiễn.
+            <p className="text-xl text-zinc-700 dark:text-zinc-300">
+              Sinh viên Công nghệ Thông tin, tập trung vào backend engineering,
+              hệ thống phân tán và ứng dụng AI thực tế.
             </p>
           </section>
 
@@ -125,22 +125,14 @@ export default function App() {
             <SectionTitle title="Liên hệ" />
             <div className="space-y-4 text-lg">
               <p>
-                Email:{" "}
-                <a
-                  href="mailto:nguyenduybao312@gmail.com"
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                >
+                Email: 
+                <a href="mailto:nguyenduybao312@gmail.com" className="hover:text-indigo-600">
                   nguyenduybao312@gmail.com
                 </a>
               </p>
               <p>
-                GitHub:{" "}
-                <a
-                  href="https://github.com/NDB512"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                >
+                GitHub: 
+                <a href="https://github.com/NDB512" target="_blank" rel="noreferrer" className="hover:text-indigo-600">
                   github.com/NDB512
                 </a>
               </p>
